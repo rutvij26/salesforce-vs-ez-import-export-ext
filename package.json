@@ -1,0 +1,119 @@
+{
+  "name": "salesforce-omnistudio-import-export",
+  "displayName": "Salesforce OmniStudio Import/Export",
+  "description": "Import and export OmniScripts, DataRaptors, and Integration Procedures between Salesforce orgs",
+  "version": "1.0.0",
+  "publisher": "salesforce-omnistudio",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "salesforce",
+    "omnistudio",
+    "omniscript",
+    "dataraptor",
+    "integration-procedure",
+    "import",
+    "export"
+  ],
+  "activationEvents": [
+    "onCommand:salesforce-omnistudio.exportOmniScript",
+    "onCommand:salesforce-omnistudio.importOmniScript",
+    "onCommand:salesforce-omnistudio.exportDataRaptor",
+    "onCommand:salesforce-omnistudio.importDataRaptor",
+    "onCommand:salesforce-omnistudio.exportIntegrationProcedure",
+    "onCommand:salesforce-omnistudio.importIntegrationProcedure"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "salesforce-omnistudio.exportOmniScript",
+        "title": "Export OmniScript",
+        "category": "Salesforce OmniStudio"
+      },
+      {
+        "command": "salesforce-omnistudio.importOmniScript",
+        "title": "Import OmniScript",
+        "category": "Salesforce OmniStudio"
+      },
+      {
+        "command": "salesforce-omnistudio.exportDataRaptor",
+        "title": "Export DataRaptor",
+        "category": "Salesforce OmniStudio"
+      },
+      {
+        "command": "salesforce-omnistudio.importDataRaptor",
+        "title": "Import DataRaptor",
+        "category": "Salesforce OmniStudio"
+      },
+      {
+        "command": "salesforce-omnistudio.exportIntegrationProcedure",
+        "title": "Export Integration Procedure",
+        "category": "Salesforce OmniStudio"
+      },
+      {
+        "command": "salesforce-omnistudio.importIntegrationProcedure",
+        "title": "Import Integration Procedure",
+        "category": "Salesforce OmniStudio"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "salesforce-omnistudio.exportOmniScript",
+          "when": "resourceExtname == .json",
+          "group": "salesforce-omnistudio"
+        },
+        {
+          "command": "salesforce-omnistudio.importOmniScript",
+          "when": "resourceExtname == .json",
+          "group": "salesforce-omnistudio"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "salesforce-omnistudio.exportOmniScript"
+        },
+        {
+          "command": "salesforce-omnistudio.importOmniScript"
+        },
+        {
+          "command": "salesforce-omnistudio.exportDataRaptor"
+        },
+        {
+          "command": "salesforce-omnistudio.importDataRaptor"
+        },
+        {
+          "command": "salesforce-omnistudio.exportIntegrationProcedure"
+        },
+        {
+          "command": "salesforce-omnistudio.importIntegrationProcedure"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "@types/mocha": "^10.0.1",
+    "@types/glob": "^8.0.0",
+    "typescript": "^4.9.4",
+    "mocha": "^10.1.0",
+    "glob": "^8.0.3"
+  },
+  "dependencies": {
+    "child_process": "^1.0.2"
+  }
+}
