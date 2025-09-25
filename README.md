@@ -204,5 +204,3 @@ This extension is provided as-is for educational and development purposes. Pleas
 ## Support
 
 For issues and feature requests, please create an issue in the repository or contact the development team.
-#   s a l e s f o r c e - v s - e z - i m p o r t - e x p o r t - e x t  
- 
